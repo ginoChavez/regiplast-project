@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="regiplast.domain.entity">
+	<class name="Person" table="person">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name"/>
+        <property name="idNumber" column="id_number"/>
+        <property name="address" column="address"/>
+        <property name="phone" column="phone"/>
+        <property name="email" column="email"/>
+        <property name="isActive" column="active"/>
+        <set name="users" inverse="true" cascade="all">
+            <key column="person_id" not-null="true"/>
+            <one-to-many class="regiplast.domain.entity.User"/>
+        </set>
+    </class> 
+</hibernate-mapping>
