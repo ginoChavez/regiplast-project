@@ -2,19 +2,19 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="regiplast.domain.entity">
+<hibernate-mapping package="pe.gob.minam.regiplast.domain.entity">
 	<class name="DeclaracionItem" table="declaracion_item">
-        <id name="id" column="id">
+        <id name="id" column="id_declaracion_item">
             <generator class="native"/>
         </id>
-        <many-to-one name="proveedor" class="regiplast.domain.entity.Proveedor" column="id_proveedor" not-null="true"/>
-        <many-to-one name="tipoDeclaracion" class="regiplast.domain.entity.TipoBase" column="id_tipo_declaracion" not-null="true"/>
-        <many-to-one name="tipoBien" class="regiplast.domain.entity.TipoBase" column="id_tipo_bien" not-null="true"/>
-        <many-to-one name="tipoResina" class="regiplast.domain.entity.TipoBase" column="id_tipo_resina" not-null="true"/>
-        <many-to-one name="tipoUso" class="regiplast.domain.entity.TipoBase" column="id_tipo_uso" not-null="true"/>
-        <many-to-one name="formaValoracion" class="regiplast.domain.entity.TipoBase" column="id_forma_valoracion" not-null="true"/>
-        <many-to-one name="origen" class="regiplast.domain.entity.Origen" column="id_origen_bien" not-null="true"/>
-        <many-to-one name="destino" class="regiplast.domain.entity.Destino" column="id_destino_bien" not-null="true"/>
+        <many-to-one name="proveedor" class="pe.gob.minam.regiplast.domain.entity.Proveedor" column="id_proveedor" not-null="true"/>
+        <many-to-one name="tipoDeclaracion" class="pe.gob.minam.regiplast.domain.entity.TipoBase" column="id_tipo_declaracion" not-null="true"/>
+        <many-to-one name="tipoBien" class="pe.gob.minam.regiplast.domain.entity.TipoBase" column="id_tipo_bien" not-null="true"/>
+        <many-to-one name="tipoResina" class="pe.gob.minam.regiplast.domain.entity.TipoBase" column="id_tipo_resina" not-null="true"/>
+        <many-to-one name="tipoUso" class="pe.gob.minam.regiplast.domain.entity.TipoBase" column="id_tipo_uso" not-null="true"/>
+        <many-to-one name="formaValoracion" class="pe.gob.minam.regiplast.domain.entity.TipoBase" column="id_forma_valoracion" not-null="true"/>
+        <many-to-one name="origen" class="pe.gob.minam.regiplast.domain.entity.Origen" column="id_origen_bien" not-null="true"/>
+        <many-to-one name="destino" class="pe.gob.minam.regiplast.domain.entity.Destino" column="id_destino_bien" not-null="true"/>
         
         <property name="biodegradable" column="biodegradable"/>
         <property name="porcentajeReciclado" column="porcentaje_reciclado"/>

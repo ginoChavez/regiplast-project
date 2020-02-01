@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="regiplast.domain.entity">
+<hibernate-mapping package="pe.gob.minam.regiplast.domain.entity">
 	<class name="Person" table="person">
-        <id name="id" column="id">
+        <id name="id" column="id_person">
             <generator class="native"/>
         </id>
         <property name="firstName" column="first_name"/>
@@ -15,8 +15,8 @@
         <property name="email" column="email"/>
         <property name="isActive" column="active"/>
         <set name="users" inverse="true" cascade="all">
-            <key column="person_id" not-null="true"/>
-            <one-to-many class="regiplast.domain.entity.User"/>
+            <key column="id_person" not-null="true"/>
+            <one-to-many class="pe.gob.minam.regiplast.domain.entity.User"/>
         </set>
     </class> 
 </hibernate-mapping>

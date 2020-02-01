@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="regiplast.domain.entity">
+<hibernate-mapping package="pe.gob.minam.regiplast.domain.entity">
 	<class name="Declaracion" table="declaracion">
-        <id name="id" column="id">
+        <id name="id" column="id_declaracion">
             <generator class="native"/>
         </id>
         <property name="anio" column="anio"/>
-        <many-to-one name="empresa" class="regiplast.domain.entity.Empresa" column="id_empresa" not-null="true"/>
+        <many-to-one name="empresa" class="pe.gob.minam.regiplast.domain.entity.Empresa" column="id_empresa" not-null="true"/>
     </class> 
 </hibernate-mapping>

@@ -8,7 +8,7 @@ BEGIN
 
 CREATE PROCEDURE getTipado(idTipado bigint)
 BEGIN
-   SELECT * FROM tipo_base where id = idTipado;
+   SELECT * FROM tipo_base where id_tipo_base = idTipado;
    END $$
 
 DELIMITER ;

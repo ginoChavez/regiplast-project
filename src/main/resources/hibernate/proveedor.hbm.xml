@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="regiplast.domain.entity">
+<hibernate-mapping package="pe.gob.minam.regiplast.domain.entity">
 	<class name="Proveedor" table="proveedor">
-        <id name="id" column="id">
+        <id name="id" column="id_proveedor">
             <generator class="native"/>
         </id>
         <property name="ruc" column="ruc"/>

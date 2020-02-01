@@ -1,5 +1,5 @@
 CREATE TABLE declaracion_item(
-	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	id_declaracion_item BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_proveedor BIGINT UNSIGNED,
     id_tipo_declaracion BIGINT UNSIGNED NOT NULL,
     id_tipo_bien BIGINT UNSIGNED,
@@ -13,7 +13,7 @@ CREATE TABLE declaracion_item(
     cantidad INT(10) NOT NULL,
     peso INT(10) NOT NULL,
     mes INT(2) NOT NULL,
-	PRIMARY KEY (id),
+	PRIMARY KEY (id_declaracion_item),
 	INDEX IX_dec_proveedor_id (id_proveedor),
     INDEX IX_dec_tipo_declaracion_id (id_tipo_declaracion),
     INDEX IX_dec_tipo_bien_id (id_tipo_bien),
@@ -22,12 +22,12 @@ CREATE TABLE declaracion_item(
     INDEX IX_dec_forma_valoracion_id (id_forma_valoracion),
     INDEX IX_dec_origen_bien_id (id_origen_bien),
     INDEX IX_dec_destino_bien_id (id_destino_bien),
-	CONSTRAINT FK_dec_proveedor_id FOREIGN KEY (id_proveedor) REFERENCES proveedor (id),
-    CONSTRAINT FK_dec_tipo_declaracion_id FOREIGN KEY (id_tipo_declaracion) REFERENCES tipo_base (id),
-    CONSTRAINT FK_dec_tipo_bien_id FOREIGN KEY (id_tipo_bien) REFERENCES tipo_base (id),
-    CONSTRAINT FK_dec_tipo_resina_id FOREIGN KEY (id_tipo_resina) REFERENCES tipo_base (id),
-    CONSTRAINT FK_dec_tipo_uso_id FOREIGN KEY (id_tipo_uso) REFERENCES tipo_base (id),
-    CONSTRAINT FK_dec_forma_valoracion_id FOREIGN KEY (id_forma_valoracion) REFERENCES tipo_base (id),
-    CONSTRAINT FK_dec_origen_bien_id FOREIGN KEY (id_origen_bien) REFERENCES origen (id),
-    CONSTRAINT FK_dec_destino_bien_id FOREIGN KEY (id_destino_bien) REFERENCES destino (id)
+	CONSTRAINT FK_dec_proveedor_id FOREIGN KEY (id_proveedor) REFERENCES proveedor (id_proveedor),
+    CONSTRAINT FK_dec_tipo_declaracion_id FOREIGN KEY (id_tipo_declaracion) REFERENCES tipo_base (id_tipo_base),
+    CONSTRAINT FK_dec_tipo_bien_id FOREIGN KEY (id_tipo_bien) REFERENCES tipo_base (id_tipo_base),
+    CONSTRAINT FK_dec_tipo_resina_id FOREIGN KEY (id_tipo_resina) REFERENCES tipo_base (id_tipo_base),
+    CONSTRAINT FK_dec_tipo_uso_id FOREIGN KEY (id_tipo_uso) REFERENCES tipo_base (id_tipo_base),
+    CONSTRAINT FK_dec_forma_valoracion_id FOREIGN KEY (id_forma_valoracion) REFERENCES tipo_base (id_tipo_base),
+    CONSTRAINT FK_dec_origen_bien_id FOREIGN KEY (id_origen_bien) REFERENCES origen (id_origen),
+    CONSTRAINT FK_dec_destino_bien_id FOREIGN KEY (id_destino_bien) REFERENCES destino (id_destino)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
